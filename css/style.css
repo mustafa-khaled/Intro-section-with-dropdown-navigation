@@ -1,0 +1,340 @@
+/* Global Rules  */
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&family=Overpass:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+:root {
+    --almost-white: hsl(0, 0%, 98%);
+    --medium-gray: hsl(0, 0%, 41%);
+    --almost-black: hsl(0, 0%, 8%);
+    --transition: .3s;
+    --border-radius: 10px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Epilogue', sans-serif;
+    color: var(--medium-gray);
+    background-color: var(--almost-white);
+}
+
+.container {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* End Global Rules  */
+
+/* Start Header  */
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+header .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .content ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    position: relative;
+    margin-right: auto;
+}
+
+header .content ul li {
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+header .content ul li .down {
+    margin: 0 0 2px 3px;
+}
+
+header .content ul li:hover {
+    color: var(--almost-black);
+}
+
+header .content .login a {
+    text-decoration: none;
+    color: var(--medium-gray);
+    margin-right: 30px;
+}
+
+header .content .login a:hover {
+    color: var(--almost-black);
+}
+
+header .content .login button {
+    color: var(--medium-gray);
+    border: 2px solid var(--medium-gray);
+    background-color: inherit;
+    padding: 10px 20px 7px;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
+}
+
+header .content .login button:hover {
+    color: var(--almost-black);
+    border-color: var(--almost-black);
+}
+
+header .content .menu {
+    display: none;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+@media (max-width:1000px) {
+    header .content .menu {
+        display: block;
+    }
+
+    header .content ul {
+        clip-path: inset(5% 20% 15% 80%);
+        display: block;
+        background-color: var(--almost-white);
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 50%;
+        z-index: 100;
+        transition: var(--transition);
+        -webkit-transition: var(--transition);
+        -moz-transition: var(--transition);
+        -ms-transition: var(--transition);
+        -o-transition: var(--transition);
+    }
+
+    header .content ul.active {
+        clip-path: inset(0% 0% 0% 0%);
+    }
+
+    header .content ul li {
+        margin: 50px 20px 0 0;
+    }
+
+    header .content .login {
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    header .content .login a {
+        display: block;
+        margin: 20px auto;
+    }
+
+    header .content .login button {
+        width: 250px;
+    }
+}
+
+@media (max-width:600px) {
+    header .content ul {
+        width: 100%;
+    }
+}
+
+/* End Header  */
+
+/* Nested List */
+.list-one,
+.list-two {
+    position: absolute;
+    padding: 20px;
+    top: 30px;
+    background-color: var(--almost-white);
+    box-shadow: 1px 2px 8px 0px #888888;
+    border-radius: var(--border-radius);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
+    display: none;
+}
+
+.list-one {
+    left: 30px;
+}
+
+.list-two {
+    left: 220px;
+}
+
+.list-one img {
+    margin-right: 10px;
+}
+
+.list-one span,
+.list-two span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.active-list {
+    display: block;
+}
+
+@media (max-width:1000px) {
+    .list-one {
+        top: 80px;
+    }
+
+    .list-two {
+        top: 145px;
+        left: 30px;
+    }
+}
+
+/* Nested List */
+/* Start Landing */
+section {
+    height: calc(95vh - 80px);
+}
+
+section .content-two {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section .content-two text {
+    flex-basis: 50%;
+}
+
+section .content-two h2 {
+    font-size: 50px;
+    color: var(--almost-black);
+}
+
+section .content-two p {
+    line-height: 1.8;
+    max-width: 450px;
+    margin: 40px 0;
+}
+
+
+section .content-two button {
+    background-color: var(--almost-black);
+    color: var(--almost-white);
+    padding: 20px 25px 18px;
+    border-radius: var(--border-radius);
+    -webkit-border-radius: var(--border-radius);
+    -moz-border-radius: var(--border-radius);
+    -ms-border-radius: var(--border-radius);
+    -o-border-radius: var(--border-radius);
+    border-color: var(--almost-black);
+    cursor: pointer;
+}
+
+section .content-two button:hover {
+    background-color: var(--almost-white);
+    color: var(--almost-black);
+}
+
+section .content-two .box img {
+    margin: 70px 0 0 20px;
+    max-width: 70px;
+}
+
+section .content-two .image img {
+    width: 400px;
+    flex-basis: 50%;
+}
+
+@media (max-width:1000px) {
+    section .content-two {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+
+    section .content-two h2 {
+        font-size: 40px;
+    }
+
+    section .content-two p {
+        line-height: 1.6;
+        margin: 30px auto;
+    }
+
+    section .content-two .image img {
+        content: url(../images/image-hero-mobile.png);
+        width: 300px;
+        margin-bottom: 30px;
+    }
+
+    section .content-two .box img {
+        margin: 30px 10px;
+        max-width: 45px;
+    }
+
+    section .content-two button {
+        padding: 10px 15px 8px;
+    }
+}
+
+@media (max-width:600px) {
+    section .content-two h2 {
+        font-size: 30px;
+    }
+}
+
+/* End Landing */
+
+
+.up {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Start Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    position: relative;
+    bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/* End Footer */
